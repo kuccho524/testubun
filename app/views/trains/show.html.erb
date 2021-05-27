@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+      <%= attachment_image_tag(@train, :train_image, :fill, 400, 400, fallback: "no_image.jpg") %>
+      <h3>鉄道会社</h3>
+      <%= @train.company %><br>
+      <h3 style="margin-top: 30px;">本文</h3>
+      <%= @train.body %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 mx-auto text-center" style="margin-top: 30px;">
+      <%= link_to '編集ページへ', edit_train_path(@train.id), class: "btn btn-info", style: "margin-right:50px;" %>
+      <%= link_to 'ホームへ', root_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
