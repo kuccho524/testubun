@@ -1,9 +1,15 @@
 class TrainsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
+  # 電車のコントローラー
+  def index
+    @user = current_user
+    @trains = @user.trains.reverse_order
+  end
+
   def show
     @train = Train.find(params[:id])
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def edit
@@ -18,7 +24,6 @@ class TrainsController < ApplicationController
 
   def new
     @train = Train.new
-    @user = current_user
   end
 
   def create
@@ -44,12 +49,12 @@ class TrainsController < ApplicationController
   def destroy
     @train = Train.find(params[:id])
     @train.destroy
-    redirect_to :top, notice: "削除しました"
+    redirect_to :index, notice: "削除しました"
   end
 
   private
 
   def train_params
-    params.require(:train).permit(:company, :body)
+    params.require(:train).permit(:train_image, :company, :body)
   end
 end

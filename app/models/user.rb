@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trains, dependent: :destroy
-  attachment :profile_image, destroy: false
   validates :name, presence: true
-  validates :introduction, length: { maximum: 10 }
+  validates :introduction, length: { maximum: 50 }
 end

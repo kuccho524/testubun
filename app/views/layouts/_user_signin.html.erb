@@ -1,8 +1,14 @@
-<li>
-  <%= link_to ' MyPage', user_path(@user), class: 'fas fa-users nav-link text-white' %>
+<li style="padding: 5px 0; margin-right: 200px; color: #fff;">
+  ようこそ、<%= current_user.name %> さん！
 </li>
 <li>
-  <%= link_to ' 投稿フォーム', new_train_path, method: :get, class: 'fas fa-wpforms nav-link text-white' %>
+  <%= link_to ' MyPage', users_path, class: 'fas fa-user nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' 投稿一覧', trains_path, class: 'fas fa-folder nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' 投稿フォーム', new_train_path, method: :get, class: 'fas fa-share-square nav-link text-white' %>
 </li>
 <li>
   <%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %>
