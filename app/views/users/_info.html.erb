@@ -1,5 +1,4 @@
 <table class='table'>
-  <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
   <tr>
 	  <th>ユーザー名</th>
 	  <th><%= user.name %></th>
@@ -10,5 +9,5 @@
   </tr>
 </table>
 <div class="row">
-  <%= link_to '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+  <%= link_to '登録情報を編集する',edit_users_path, class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
 </div>

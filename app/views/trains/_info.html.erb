@@ -1,0 +1,20 @@
+<!-- 投稿内容を表示 -->
+<div class="image text-center" style="margin-top: 30px;">
+  <%= attachment_image_tag(train, :train_image, :fill, 600, 400, fallback: "no_image.jpg") %>
+</div>
+<table style="margin-top: 30px; font-size: 20px;">
+  <tr>
+    <th>会社</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= train.company %></td>
+  </tr>
+  <tr>
+    <th>本文</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= train.body %></td>
+  </tr>
+</table>

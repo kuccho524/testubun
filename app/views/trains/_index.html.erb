@@ -2,8 +2,9 @@
   <thead>
     <tr>
       <th></th>
-      <th>Company</th>
-      <th>Body</th>
+      <th>投稿者</th>
+      <th>鉄道会社</th>
+      <th>本文</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
             <%= attachment_image_tag(train, :train_image, :fill, 50, 50, fallback: "no_image.jpg") %>
           <% end %>
         </td>
+        <td><%= train.user.name %></td>
         <td><%= train.company %></td>
         <td><%= train.body %></td>
       </tr>

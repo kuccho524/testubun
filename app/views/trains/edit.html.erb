@@ -3,24 +3,11 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
   		<h1>投稿編集画面</h1>
     	<%= render 'layouts/errors', obj: @train %>
-  		<%= form_with model:@train,local:true do |f| %>
-        <div class="form-group">
-          <%= f.label :画像 %>
-          <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :鉄道会社 %><br>
-          <%= f.select :company, Train.companies.keys.to_a %>
-        </div>
-        <div class="form-group">
-          <%= f.label :本文 %>
-          <%= f.text_area :body, class: 'form-control train_body' %>
-        </div>
-        <div class="form-group">
-          <%= f.submit 'Update Train', class: 'btn btn-success' %>
-        </div>
-      <% end %>
-  		<%= link_to 'Show', train_path(@train) %> |
-  		<%= link_to 'Back', root_path %>
+
+  		<!-- 投稿内容編集フォーム -->
+  		<%= render 'trains/edit_form', train: @train %>
+
+  		<!-- 各リンクを表示 -->
+  		<%= link_to '詳細ページへ', train_path(@train), class: "btn btn-primary" %>　|　<%= link_to 'Topへ', root_path, class: "btn btn-secondary" %>
   </div>
 </div>
