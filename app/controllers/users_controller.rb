@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
   # ユーザーのコントローラー
+  def trains
+    @user = current_user
+    @trains = @user.trains.reverse_order
+  end
+
   def show
     @user = current_user
   end

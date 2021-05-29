@@ -1,10 +1,9 @@
 class TrainsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # 電車のコントローラー
   def index
-    @user = current_user
-    @trains = @user.trains.reverse_order
+    @trains = Train.all.reverse_order
   end
 
   def show
@@ -32,17 +31,16 @@ class TrainsController < ApplicationController
     if @train.save
       redirect_to train_path(@train), notice: "投稿できました"
     else
-      render :top, notice: "投稿に失敗しました"
+      render :new
     end
   end
 
   def update
-    @train = Train.update(train_params)
-    @train.user_id = current_user.id
-    if @train.save
+    @train = Train.find(params[:id])
+    if @train.update(train_params)
       redirect_to train_path(@train), notice: "更新しました"
     else
-      render :edit, notice: "更新に失敗しました"
+      render :edit
     end
   end
 

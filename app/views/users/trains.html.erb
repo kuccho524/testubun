@@ -1,0 +1,14 @@
+<!-- 投稿履歴一覧ページ -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">投稿履歴一覧</h1>
+
+      <!-- 投稿履歴一覧テーブル -->
+      <%= render 'trains/index', trains: @trains %>
+    </div>
+    <div class="edit_link" style="margin: 10px 0 20px;">
+  <%= link_to 'MyPageへ', users_path, class: "btn btn-primary" %>　|　<%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false} %>
+</div>
+  </div>
+</div>

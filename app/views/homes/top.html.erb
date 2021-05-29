@@ -1,19 +1,42 @@
+<div id="trains">
+  <div id="images">
+    <div class="image1"></div>
+    <div class="image2"></div>
+    <div class="image3"></div>
+    <div class="image4"></div>
+    <div class="image5"></div>
+    <div class="image6"></div>
+    <div class="image7"></div>
+    <div class="image8"></div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-sm-10 mx-auto">
-      <h1 style="text-align: center;">鉄分とは？</h1>
-      <div class="about" style="text-align: center;">
-        <p style="margin-top: 20px;">
-          「<span style="font-weight: bold;">鉄分</span>」とは、ここでは人間に必要なあの鉄分ではなく、<br>
-          鉄道ファンにとって必要な鉄道の成分のことを指します。<br>
-          とは言いながらも、当サイトは鉄道ファン / 非鉄道ファン問わず、<br>
-          このご時世で外出が難しくなった中でも鉄道を楽しみたい、<br>
-          旅行した気分を味わいという方の為に、<br>
-          少しでも尽力できればいいなと考えております。<br>
-          名前上、どうしても鉄道中心となってしまいますが、<br>
-          どうかこの「<span style="font-weight: bold;">鉄分</span>」を楽しんでくださいませ。
-        </p>
-      </div>
+    <div class="col-sm-12 mx-auto">
+      <section class="testubun">
+        <h1 style="text-align: center; margin-top: 30px; font-weight: bold;">鉄分とは？</h1>
+        <div class="about" style="text-align: center; margin-top: 20px;">
+          <p style="margin-top: 20px;">
+            「<strong>鉄分</strong>」とは、ここでは人間に必要なあの鉄分ではなく、<br>
+            鉄道ファンにとって必要な鉄道の成分のことを指します。<br>
+            とは言いながらも、当サイトは鉄道ファン / 非鉄道ファン問わず、<br>
+            このご時世で外出が難しくなった中でも鉄道を楽しみたい、<br>
+            旅行した気分を味わいという方の為に、<br>
+            少しでも尽力できればいいなと考えております。<br>
+            名前上、どうしても鉄道中心となってしまいますが、<br>
+            どうかこの「<strong>鉄分</strong>」を楽しんでくださいませ。
+          </p>
+        </div>
+      </section>
+      <section class="new-trains-posts">
+        <h1 style="text-align: center; margin-top: 30px; font-weight: bold;">新着投稿</h1>
+        <div class="d-flex flex-row flex-wrap" style="margin-top: 20px">
+          <%= render 'homes/new_trains', train: @train %>
+        </div>
+        <div class="paginate" style="margin-bottom: 40px;">
+          <%= paginate @train %>
+        </div>
+      </section>
     </div>
   </div>
 </div>
