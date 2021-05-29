@@ -3,7 +3,7 @@ class HomesController < ApplicationController
   # topページ
   def top
     @user = current_user
-    @trains = Train.all
+    @train = Train.page(params[:page]).reverse_order.per(8)
   end
 
 end

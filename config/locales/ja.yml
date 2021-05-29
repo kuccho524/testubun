@@ -7,3 +7,8 @@ ja:
       email: "メールアドレス"
       password: "パスワード"
       name: "ユーザー名"
+      introduction: "紹介文"
+
+     train:
+      train_image: "画像"
+      body: "本文"

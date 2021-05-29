@@ -1,7 +1,7 @@
 class Train < ApplicationRecord
   belongs_to :user
   attachment :train_image, destroy: false
-  validates :body, length: { minimum: 3, maximum: 200 }
+  validates :body, length: { minimum: 3, maximum: 29 }
 
   enum company: {
     JR: 0,

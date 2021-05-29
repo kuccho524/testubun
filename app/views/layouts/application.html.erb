@@ -12,8 +12,13 @@
   <body>
     <%= render 'layouts/header' %>
       <main>
-        <p id="notice"><%= notice %></p>
         <%= yield %>
+        <span id="back">
+          <a href="#">
+            <img src="/assets/arrow.png" alt="">
+          </a>
+        </span>
       </main>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
