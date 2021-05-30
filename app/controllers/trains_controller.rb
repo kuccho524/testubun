@@ -9,6 +9,7 @@ class TrainsController < ApplicationController
   def show
     @train = Train.find(params[:id])
     @user = current_user
+    @train_comment = TrainComment.new
   end
 
   def edit

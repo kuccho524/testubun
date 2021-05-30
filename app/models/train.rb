@@ -1,8 +1,14 @@
 class Train < ApplicationRecord
+
+  # アソシエーション
   belongs_to :user
+  has_many :train_comments, dependent: :destroy
+
+  # バリデーション
   attachment :train_image, destroy: false
   validates :body, length: { minimum: 3, maximum: 29 }
 
+  #enum
   enum company: {
     JR: 0,
     阪急: 1,
