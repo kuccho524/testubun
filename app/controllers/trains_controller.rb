@@ -3,7 +3,7 @@ class TrainsController < ApplicationController
 
   # 電車のコントローラー
   def index
-    @trains = Train.all.reverse_order
+    @trains = Train.page(params[:page]).reverse_order.per(8)
   end
 
   def show
