@@ -6,6 +6,9 @@
 
       <!-- 投稿履歴一覧テーブル -->
       <%= render 'trains/index', trains: @trains %>
-      </div>
+    </div>
+    <div class="pagination mx-auto" style="margin-bottom: 40px;">
+      <%= paginate @trains %>
+    </div>
   </div>
 </div>

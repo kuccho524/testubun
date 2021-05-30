@@ -13,9 +13,9 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 mx-auto">
-      <section class="testubun">
-        <h1 style="text-align: center; margin-top: 30px; font-weight: bold;">鉄分とは？</h1>
-        <div class="about" style="text-align: center; margin-top: 20px;">
+      <section id="testubun-about">
+        <h1 class="about-title">鉄分とは？</h1>
+        <div class="about-body">
           <p style="margin-top: 20px;">
             「<strong>鉄分</strong>」とは、ここでは人間に必要なあの鉄分ではなく、<br>
             鉄道ファンにとって必要な鉄道の成分のことを指します。<br>
@@ -30,12 +30,12 @@
       </section>
       <section class="new-trains-posts">
         <h1 style="text-align: center; margin-top: 30px; font-weight: bold;">新着投稿</h1>
-        <div class="d-flex flex-row flex-wrap" style="margin-top: 20px">
+        <div class="d-flex flex-row flex-wrap" style="margin-top: 20px;">
           <%= render 'homes/new_trains', train: @train %>
         </div>
-        <div class="paginate" style="margin-bottom: 40px;">
-          <%= paginate @train %>
-        </div>
+      </section>
+      <section class="link mx-auto text-center" style="margin-bottom: 40px;">
+        <%= link_to '投稿一覧ページへ', trains_path, class: 'btn btn-primary' %>
       </section>
     </div>
   </div>
