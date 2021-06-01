@@ -24,5 +24,13 @@
         </ul>
       </div>
     </div>
+     <% if user_signed_in? %>
+      <div class="seach-form" style="padding-bottom: 5px;">
+        <%= form_with url: searches_search_path, method: :get, local:true do |f| %>
+          <%= f.text_field :search, class: "form-control-sm mt-2", style: "width:100px;", placeholder: "検索" %>
+          <%= f.submit '検索', class: "btn btn-success btn-sm" %>
+        <% end %>
+      </div>
+    <% end %>
   </nav>
 </header>

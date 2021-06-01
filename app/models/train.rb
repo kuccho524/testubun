@@ -31,4 +31,14 @@ class Train < ApplicationRecord
     地下鉄: 18,
     その他: 19
   }
+
+  # 検索方法
+  def self.looks(search)
+    return none if search.blank?
+    if search
+      Train.where(['body LIKE ?', "%#{search}%"])
+    else
+      Train.all
+    end
+  end
 end
