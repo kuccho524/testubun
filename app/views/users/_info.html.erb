@@ -1,0 +1,18 @@
+<!-- ユーザーの情報を表示 -->
+<%= attachment_image_tag(user, :profile_image, width: "100px", height: "100px", fallback: "no_image.jpg") %>
+<table>
+  <th>ユーザ名</th>
+  <th>　</th>
+  <th><%= user.name %></th>
+</table>
+<section class="introduction">
+  <p>
+   <strong>紹介文</strong><br>
+   <%= user.introduction %>
+  </p>
+</section>
+
+<!-- 更新画面へのリンク -->
+<div class="edit-link">
+  <%= link_to '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+</div>
