@@ -6,12 +6,12 @@
     <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
   </div>
   <div class="form-group">
-    <%= f.label :鉄道会社 %><br>
+    <%= f.label :路線 %><br>
     <%= f.select :company, Train.companies.keys.to_a %>
   </div>
   <div class="form-group">
     <%= f.label :本文 %>
-    <%= f.text_area :body, size: '90x5' %>
+    <%= f.text_area :body, size: '90x8' %>
   </div>
   <div class="form-group">
     <%= f.submit "投稿", class: "btn btn-success" %>
