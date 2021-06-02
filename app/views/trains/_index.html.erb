@@ -19,6 +19,7 @@
         <td><%= train.user.name %></td>
         <td><%= train.company %></td>
         <td><%= train.body %></td>
+        <td id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></td>
         <td class="comment_count">コメント数： <%= train.train_comments.count %></td>
       </tr>
     <% end %>

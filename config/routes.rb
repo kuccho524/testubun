@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'searches/search' => "searches#search"
   resource :users, only: [:show]
   resources :trains do
+    resource :favorites, only: [:create, :destroy]
     resources :train_comments, only: [:create, :destroy]
   end
   devise_for :users

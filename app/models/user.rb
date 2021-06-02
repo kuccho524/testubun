@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :trains, dependent: :destroy
   has_many :train_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   # バリデーション
   validates :name, presence: true
