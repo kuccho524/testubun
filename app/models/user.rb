@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :trains, dependent: :destroy
   has_many :train_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   # 自分がフォローされる側の関係性
   has_many :passive_of_relationships, class_name: "Relationship", foreign_key: :followed_id, dependent: :destroy
