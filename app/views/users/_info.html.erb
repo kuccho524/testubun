@@ -41,7 +41,7 @@
     <% if @isRoom == true %>
       <a href="/rooms/<%= @roomId %>"><button type="button" class="btn btn-secondary">チャットへ</button></a>
     <% else %>
-      <%= form_for @room do |f| %>
+      <%= form_with model: @room, url: rooms_path, local:true do |f| %>
         <%= fields_for @entry do |e| %>
           <%= e.hidden_field :user_id, :value => @user.id %>
         <% end %>
